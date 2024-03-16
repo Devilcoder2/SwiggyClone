@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between border border-black">
       <div>Logo</div>
       <div>Live Location</div>
       <div>About</div>

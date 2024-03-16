@@ -6,6 +6,7 @@ import About from "./Components/About.jsx";
 import Cart from "./Components/Cart.jsx";
 import Help from "./Components/Help.jsx";
 import Login from "./Components/Login.jsx";
+import ResturantMenu from "./Components/ResturantMenu.jsx";
 import Signup from "./Components/Signup.jsx";
 
 import "./index.css";
@@ -15,6 +16,10 @@ const appRoutes = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <ResturantMenu />,
+      },
       {
         path: "/about",
         element: <About />,
