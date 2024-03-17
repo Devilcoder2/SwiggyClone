@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
 import Card from "./Card";
+import OnMind from "./OnMind";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
+  const [apidata, setapidata] = useState(null);
 
   useEffect(() => {
     fetchApi();
@@ -17,29 +19,35 @@ const ResturantMenu = () => {
     const newResList =
       data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
-    console.log(newResList[0].info);
+    setapidata(data);
     setResList(newResList);
   };
 
   return (
-    <div className="flex flex-wrap justify-start mx-auto">
-      {resList.map((t) => (
-        <Card
-          key={t.info.id}
-          image={t.info.cloudinaryImageId}
-          title={t.info.name}
-          rating={t.info.avgRating}
-          deliverytime={t.info.sla.slaString}
-          cusinis={t.info.cuisines}
-          location={t.info.areaName}
-          imageHeader={t.info.aggregatedDiscountInfoV3?.header}
-          imageSubHeader={t.info.aggregatedDiscountInfoV3?.subHeader}
-        />
-      ))}
-      {/* <div>first : What is on your mind</div>
+    <>
+      <div className="mx-24 px-8">
+        {apidata !== null && <OnMind data={apidata} />}
+      </div>
+
+      <div className="flex flex-wrap justify-center mx-8">
+        {resList.map((t) => (
+          <Card
+            key={t.info.id}
+            image={t.info.cloudinaryImageId}
+            title={t.info.name}
+            rating={t.info.avgRating}
+            deliverytime={t.info.sla.slaString}
+            cusinis={t.info.cuisines}
+            location={t.info.areaName}
+            imageHeader={t.info.aggregatedDiscountInfoV3?.header}
+            imageSubHeader={t.info.aggregatedDiscountInfoV3?.subHeader}
+          />
+        ))}
+        {/* <div>first : What is on your mind</div>
       <div>second: Top resturant chains</div>
       <div>third: resturants with online food delivery.... with filters</div> */}
-    </div>
+      </div>
+    </>
   );
 };
 
