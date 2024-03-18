@@ -16,17 +16,18 @@ const ResturantMenu = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&is-seo-homepage-enabled=true"
     );
     const data = await res.json();
-    const newResList =
-      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+    const restaurantData =
+      data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
 
     setapidata(data);
-    setResList(newResList);
+    setResList(restaurantData);
   };
 
   return (
     <>
       <div className="mx-24 px-8">
-        {apidata !== null && <OnMind data={apidata} />}
+        {/* {apidata !== null && <OnMind data={apidata} />} */}
       </div>
 
       <div className="flex flex-wrap justify-center mx-8">

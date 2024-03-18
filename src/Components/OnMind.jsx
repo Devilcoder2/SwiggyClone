@@ -2,13 +2,21 @@ import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const OnMind = ({ data }) => {
-  const newData = data.data.cards[0].card.card.gridElements.infoWithStyle.info;
+  const newData =
+    data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info;
   const imageLink = "https://media-assets.swiggy.com/swiggy/image/upload/";
 
   const [startIndex, setStartIndex] = useState(0);
   const [visibleItems, setVisibleItems] = useState(0);
 
   const containerRef = useRef(null);
+
+  const clickHandler = async (data) => {
+    console.log(data.entityId);
+    // const response = await fetch(data.action.link);
+    // const res = await response.json();
+    // console.log(res);
+  };
 
   useEffect(() => {
     // Calculate the number of visible items based on container width and image width
@@ -71,9 +79,7 @@ const OnMind = ({ data }) => {
                     <img
                       src={`${imageLink}${t.imageId}`}
                       className="w-full h-full object-cover hover:cursor-pointer"
-                      onClick={() => {
-                        console.log("button clicked");
-                      }}
+                      onClick={() => clickHandler(t)}
                       alt={t.altText}
                     />
                   </div>
