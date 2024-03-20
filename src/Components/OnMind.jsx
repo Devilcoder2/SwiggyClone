@@ -12,23 +12,16 @@ const OnMind = ({ data }) => {
   const containerRef = useRef(null);
 
   const clickHandler = async (data) => {
-    // console.log(data);
     const url = data.entityId;
     const regex = /collection_id=(\d+)/;
     const match = url.match(regex);
     let collectionId = match ? match[1] : null;
 
-    if (collectionId) {
-      console.log(collectionId); // This will output: 83656
-    } else {
+    if (collectionId === null) {
       collectionId = data.entityId;
     }
 
-    const URL_COLLECTION = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&collection=${collectionId}&tags=layout_PavBhaji_Contextual&sortBy=&filters=&type=rcv2&offset=0&page_type=null`;
-
-    const response = await fetch(URL_COLLECTION);
-    const res = await response.json();
-    console.log(res);
+    window.location.href = `/${collectionId}`;
   };
 
   useEffect(() => {
@@ -83,7 +76,7 @@ const OnMind = ({ data }) => {
         >
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${startIndex * 120}px)` }}
+            style={{ transform: `translateX(-${startIndex * 200}px)` }}
           >
             {newData.map((t) => (
               <div key={t.id}>
@@ -101,6 +94,7 @@ const OnMind = ({ data }) => {
             ))}
           </div>
         </div>
+
         <button
           className={`absolute top-16 right-4 z-10 bg-white rounded-full p-2 ${
             startIndex + visibleItems >= newData.length

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import About from "./Components/About.jsx";
 import Cart from "./Components/Cart.jsx";
+import FoodTypeRes from "./Components/FoodTypeRes.jsx";
 import Help from "./Components/Help.jsx";
 import Login from "./Components/Login.jsx";
 import ResturantMenu from "./Components/ResturantMenu.jsx";
@@ -39,6 +40,10 @@ const appRoutes = createBrowserRouter([
       {
         path: "Signup",
         element: <Signup />,
+      },
+      {
+        path: "/:id",
+        element: <FoodTypeRes />,
       },
     ],
   },
