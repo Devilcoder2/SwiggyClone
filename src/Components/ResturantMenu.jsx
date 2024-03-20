@@ -18,7 +18,7 @@ const ResturantMenu = () => {
     const data = await res.json();
 
     const restaurantData =
-      data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
     setapidata(data);
     setResList(restaurantData);
@@ -27,7 +27,7 @@ const ResturantMenu = () => {
   return (
     <>
       <div className="mx-24 px-8">
-        {/* {apidata !== null && <OnMind data={apidata} />} */}
+        {apidata !== null && <OnMind data={apidata} />}
       </div>
 
       <div className="flex flex-wrap justify-center mx-8">
