@@ -7,6 +7,7 @@ import Cart from "./Components/Cart.jsx";
 import FoodTypeRes from "./Components/FoodTypeRes.jsx";
 import Help from "./Components/Help.jsx";
 import Login from "./Components/Login.jsx";
+import Resturants from "./Components/Resturants.jsx";
 import ResturantMenu from "./Components/ResturantMenu.jsx";
 import Signup from "./Components/Signup.jsx";
 
@@ -19,7 +20,7 @@ const appRoutes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ResturantMenu />,
+        element: <Resturants />,
       },
       {
         path: "/about",
@@ -38,12 +39,16 @@ const appRoutes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "Signup",
+        path: "/signup",
         element: <Signup />,
       },
       {
         path: "/:id",
         element: <FoodTypeRes />,
+      },
+      {
+        path: "/resmenu/:resid",
+        element: <ResturantMenu />,
       },
     ],
   },
