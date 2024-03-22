@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Card.css";
 
 const Card = ({
   image,
@@ -14,17 +15,21 @@ const Card = ({
   const cusinisString = cusinis.join(", ");
   return (
     <div className="w-[273px] h-[284px] border border-gray-100 m-6 mb-10  rounded-xl hover:scale-[95%] transition-all hover:cursor-pointer">
-      <img
-        src={imageLink}
-        className="w-[273px] h-[182px] rounded-xl  outline-none"
-      />
-      <div>
-        {imageHeader && (
-          <h1 className="mt-[-35px] text-white font-bold m-2 text-xl">{`${imageHeader} ${imageSubHeader}`}</h1>
-        )}
+      <div className="relative">
+        <img
+          src={imageLink}
+          className="w-[273px] h-[182px] rounded-xl object-cover shadow-lg"
+        />
+        <div className="abcd rounded-xl ">
+          <div>
+            {imageHeader && (
+              <h1 className="mt-[-25px] text-white font-bold  text-xl">{`${imageHeader} ${imageSubHeader}`}</h1>
+            )}
+          </div>
+        </div>
       </div>
 
-      <h1 className="font-bold text-gray-600 text-xl px-1 text-ellipsis whitespace-nowrap overflow-hidden">
+      <h1 className="font-bold text-gray-600 text-xl px-1 pt-2 text-ellipsis whitespace-nowrap overflow-hidden">
         {title}
       </h1>
 

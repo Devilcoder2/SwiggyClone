@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Card from "./Card";
 import OnMind from "./OnMind";
@@ -32,17 +33,18 @@ const ResturantMenu = () => {
 
       <div className="flex flex-wrap justify-center mx-8">
         {resList.map((t) => (
-          <Card
-            key={t.info.id}
-            image={t.info.cloudinaryImageId}
-            title={t.info.name}
-            rating={t.info.avgRating}
-            deliverytime={t.info.sla.slaString}
-            cusinis={t.info.cuisines}
-            location={t.info.areaName}
-            imageHeader={t.info.aggregatedDiscountInfoV3?.header}
-            imageSubHeader={t.info.aggregatedDiscountInfoV3?.subHeader}
-          />
+          <Link key={t.info.id} to={"/resmenu/" + t.info.id}>
+            <Card
+              image={t.info.cloudinaryImageId}
+              title={t.info.name}
+              rating={t.info.avgRating}
+              deliverytime={t.info.sla.slaString}
+              cusinis={t.info.cuisines}
+              location={t.info.areaName}
+              imageHeader={t.info.aggregatedDiscountInfoV3?.header}
+              imageSubHeader={t.info.aggregatedDiscountInfoV3?.subHeader}
+            />
+          </Link>
         ))}
         {/* <div>first : What is on your mind</div>
       <div>second: Top resturant chains</div>

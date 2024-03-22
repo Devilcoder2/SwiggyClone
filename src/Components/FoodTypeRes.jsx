@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+
 import Card from "./Card";
 
 const FoodTypeRes = () => {
@@ -38,19 +40,22 @@ const FoodTypeRes = () => {
         {allRes.map((t, i) => {
           if (i >= 3 && i <= 10) {
             return (
-              <Card
-                key={i}
-                image={t.card.card.info.cloudinaryImageId}
-                title={t.card.card.info.name}
-                rating={t.card.card.info.avgRating}
-                deliverytime={t.card.card.info.sla.slaString}
-                cusinis={t.card.card.info.cuisines}
-                location={t.card.card.info.areaName}
-                imageHeader={t.card.card.info.aggregatedDiscountInfoV3?.header}
-                imageSubHeader={
-                  t.card.card.info.aggregatedDiscountInfoV3?.subHeader
-                }
-              />
+              <Link key={i} to={"/resmenu/" + t.card.card.info.id}>
+                <Card
+                  image={t.card.card.info.cloudinaryImageId}
+                  title={t.card.card.info.name}
+                  rating={t.card.card.info.avgRating}
+                  deliverytime={t.card.card.info.sla.slaString}
+                  cusinis={t.card.card.info.cuisines}
+                  location={t.card.card.info.areaName}
+                  imageHeader={
+                    t.card.card.info.aggregatedDiscountInfoV3?.header
+                  }
+                  imageSubHeader={
+                    t.card.card.info.aggregatedDiscountInfoV3?.subHeader
+                  }
+                />
+              </Link>
             );
           }
         })}
