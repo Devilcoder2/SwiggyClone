@@ -5,3 +5,7 @@
 .checked {
   color: orange;
 }
+
+.checked-green {
+  color: rgb(22, 163, 74);
+}
