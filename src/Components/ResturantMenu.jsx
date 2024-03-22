@@ -1,15 +1,22 @@
-import { useEffect } from "react";
+/* eslint-disable */
+
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+
+import ResFullMenu from "./InsideResturant/ResFullMenu";
+import ResMenuHeader from "./InsideResturant/ResMenuHeader";
+import ResMenuOffers from "./InsideResturant/ResMenuOffers";
 
 const ResturantMenu = () => {
   const { resid } = useParams();
+  const [data, setData] = useState(null);
 
   const fetchapi = async () => {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.490642&lng=80.3093933&restaurantId=85566"
+      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.490642&lng=80.3093933&restaurantId=${resid}`
     );
-    const data = await response.json();
-    console.log(data);
+    const newdata = await response.json();
+    setData(newdata);
   };
 
   useEffect(() => {
@@ -18,7 +25,10 @@ const ResturantMenu = () => {
 
   return (
     <>
-      <h1>This is the menu of this resturant</h1>
+      {data !== null && <ResMenuHeader data={data} />}
+      <ResMenuOffers />
+      {/* here veg only filter  */}
+      <ResFullMenu />
     </>
   );
 };
