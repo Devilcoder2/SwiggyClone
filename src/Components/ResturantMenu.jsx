@@ -26,7 +26,7 @@ const ResturantMenu = () => {
   return (
     <>
       {data !== null && <ResMenuHeader data={data} />}
-      <ResMenuOffers />
+      {data !== null && <ResMenuOffers data={data} />}
       {/* here veg only filter  */}
       <ResFullMenu />
     </>
