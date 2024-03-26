@@ -1,8 +1,7 @@
 /* eslint-disable */
 
 const ResMenuHeader = ({ data }) => {
-  const realData = data.data.cards[0].card.card.info;
-
+  const realData = data.data.cards[2].card.card.info;
   const {
     city,
     name,
