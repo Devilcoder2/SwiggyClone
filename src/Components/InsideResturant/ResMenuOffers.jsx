@@ -9,29 +9,28 @@ const ResMenuOffers = ({ data }) => {
   console.log(newdata);
   return (
     <>
-      <h2>These are resMenu offers</h2>
-      <div className="flex ml-[350px]">
-        {newdata.map((t) => {
-          if (t.info.couponCode !== undefined) {
-            return (
-              <OffersCard
-                key={t.info.offerIds}
-                offerLogo={t.info.offerLogo}
-                header={t.info.header}
-                couponCode={t.info.couponCode}
-                description={t.info.description}
-              />
-            );
-          }
-        })}
+      <div
+        className="flex ml-[350px] no-scrollbar mt-6"
+        style={{ marginRight: "380px", overflowX: "auto" }}
+      >
+        <div className="flex space-x-4">
+          {newdata.map((t, index) => {
+            if (t.info.couponCode !== undefined) {
+              return (
+                <OffersCard
+                  key={index}
+                  offerLogo={t.info.offerLogo}
+                  header={t.info.header}
+                  couponCode={t.info.couponCode}
+                  description={t.info.description}
+                />
+              );
+            }
+          })}
+        </div>
       </div>
     </>
   );
 };
 
 export default ResMenuOffers;
-
-//offerLogo
-//header
-//couponCode
-//description

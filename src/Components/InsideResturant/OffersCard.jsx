@@ -6,9 +6,13 @@ const OffersCard = ({ offerLogo, header, description, couponCode }) => {
   return (
     <>
       <div className="w-[200px] h-[70px] mr-4 rounded-lg  border border-gray-300">
-        <div className="flex mt-4 ml-2">
+        <div className="flex mt-[12px] ml-2">
           <img src={imageLink} alt="offer-logo" className="w-6 h-6 mr-2" />
-          <h1 className="text-sm font-bold text-gray-500">{header}</h1>
+          <h1 className="text-sm font-bold text-gray-600">{header}</h1>
+        </div>
+
+        <div className="ml-3 mt-2">
+          <h3 className="text-xs text-gray-500 font-semibold">{`${couponCode} | ${description}`}</h3>
         </div>
       </div>
     </>
