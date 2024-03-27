@@ -24,8 +24,14 @@ const ResMenuHeader = ({ data }) => {
           <span className="text-gray-700 font-semibold">{`${name}`}</span>
         </p>
 
-        <div className="mt-10">
-          <h1 className="text-xl tracking-wide text-gray-800 font-bold">
+        <div className="mt-12 ml-[-3px]">
+          <h1 className="text-2xl tracking-wide text-gray-800 font-bold">
+            {name}
+          </h1>
+        </div>
+
+        <div className="mt-12">
+          <h1 className="text-lg tracking-wide text-gray-800 font-bold">
             {name}
           </h1>
 
@@ -110,3 +116,4 @@ const ResMenuHeader = ({ data }) => {
 };
 
 export default ResMenuHeader;
+//shimmer ui
