@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 import Card from "./Card";
 import OnMind from "./OnMind";
+import ShimmerCard from "./Shimmer/ShimmerCard";
+import ShimmerOnMind from "./Shimmer/ShimmerOnMind";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
   const [apidata, setapidata] = useState(null);
+
+  const cardArray = new Array(9).fill(null);
 
   useEffect(() => {
     fetchApi();
@@ -19,7 +23,7 @@ const ResturantMenu = () => {
     const data = await res.json();
 
     const restaurantData =
-      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+      data.data.cards[3].card.card.gridElements.infoWithStyle.restaurants;
 
     setapidata(data);
     setResList(restaurantData);
@@ -28,8 +32,22 @@ const ResturantMenu = () => {
   return (
     <>
       <div className="mx-24 px-8">
-        {apidata !== null && <OnMind data={apidata} />}
+        {apidata !== null ? (
+          <OnMind data={apidata} />
+        ) : (
+          <div className="mx-24 px-8">
+            <ShimmerOnMind />
+          </div>
+        )}
       </div>
+
+      {resList.length === 0 && (
+        <div className="flex flex-wrap justify-center mx-8">
+          {cardArray.map((_, index) => (
+            <ShimmerCard key={index} />
+          ))}
+        </div>
+      )}
 
       <div className="flex flex-wrap justify-center mx-8">
         {resList.map((t) => (
