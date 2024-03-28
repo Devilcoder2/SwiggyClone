@@ -1,71 +1,40 @@
-/* eslint-disable */
-
-const ResMenuHeader = ({ data }) => {
-  const realData = data.data.cards[2].card.card.info;
-  const {
-    city,
-    name,
-    cuisines,
-    areaName,
-    sla,
-    avgRating,
-    totalRatings,
-    feeDetails,
-    costForTwoMessage,
-  } = realData;
-
-  const cusinisString = cuisines.join(", ");
-
-  const parts = feeDetails.message.split(" | ");
-  const boldPart = parts[0].replace("<b>", "").replace("</b>", "");
-  const regularPart = parts.slice(1).join(" | ");
-
+const ShimmerResMenuHeader = () => {
   return (
     <>
       <div className="ml-[350px] mt-16">
         <p className="ml-[-10px] text-[10px] text-gray-500">
-          {`Home / ${city} / `}
-          <span className="text-gray-700 font-semibold">{`${name}`}</span>
+          <div className="text-gray-700 font-semibold  rounded-lg w-32 h-4 bg-gray-300"></div>
         </p>
 
-        <div className="mt-12 ml-[-3px]">
-          <h1 className="text-2xl tracking-wide text-gray-800 font-bold">
-            {name}
-          </h1>
+        <div className="mt-12 ml-[-7px]">
+          <div className=" w-60 h-8 rounded-lg bg-gray-300"></div>
         </div>
 
         <div className="mt-12">
-          <h1 className="text-lg tracking-wide text-gray-800 font-bold">
-            {name}
-          </h1>
+          <div className="h-6 w-44 rounded-lg bg-gray-300"></div>
 
           <div className="flex justify-between text-[13px] mb-4 mt-2 text-gray-500">
             <div>
-              <h4>{cusinisString}</h4>
-              <h3>{`${areaName}, ${sla.lastMileTravelString}`}</h3>
+              <div className="h-4 w-24 rounded-lg bg-gray-300"></div>
+              <div className="h-4 w-28 mt-2 rounded-lg bg-gray-300"></div>
             </div>
-            <div className="mr-[380px] border border-gray-300 rounded-md py-2 px-1 mt-[-40px]">
-              <h2 className=" font-extrabold text-[15px] text-green-600 ml-[6px] mb-1">
-                <span className="fa fa-star checked-green mr-1"></span>
-                {avgRating}
-              </h2>
+            <div className="mr-[380px] border border-gray-300 rounded-md py-2 px-1 mt-[-40px] bg-gray-300">
+              <h2 className=" font-extrabold text-[15px] text-green-600 ml-[6px] mb-1"></h2>
               <hr className="w-14 mt-2 font-semibold mx-auto"></hr>
-              <h4 className="text-[10px] font-bold mt-4 text-gray-400">{`${totalRatings}+ ratings`}</h4>
+              <h4 className="text-[10px] font-bold mt-4 text-gray-400"></h4>
             </div>
           </div>
 
-          {feeDetails.message !== undefined && (
+          {
             <div className="flex mb-4">
               <img
                 className="w-4 h-4 mt-1  mr-2"
                 src="https://shorturl.at/uvKPV"
                 alt="delivery time icon"
               />
-              <h2 className="text-[14px] text-gray-500">
-                <strong>{boldPart}</strong> | {regularPart}
-              </h2>
+              <div className="h-4 w-60 rounded-lg bg-gray-300"></div>
             </div>
-          )}
+          }
 
           <hr className="decoration-dashed  mr-[380px]"></hr>
 
@@ -88,7 +57,8 @@ const ResMenuHeader = ({ data }) => {
                 fill="#3E4152"
               ></path>
             </svg>
-            <h2 className="px-2 font-extrabold  mt-[-1px]">{sla.slaString}</h2>
+            <div className="h-4 w-24 rounded-lg ml-2 bg-gray-300"></div>
+
             <svg
               className="mx-4"
               width="18"
@@ -109,9 +79,7 @@ const ResMenuHeader = ({ data }) => {
                 fill="#3E4152"
               ></path>
             </svg>
-            <h1 className="mx-[-8px] mt-[-1px] font-extrabold">
-              {costForTwoMessage}
-            </h1>
+            <div className="h-4 w-24 rounded-lg ml-2 bg-gray-300"></div>
           </div>
         </div>
       </div>
@@ -119,5 +87,4 @@ const ResMenuHeader = ({ data }) => {
   );
 };
 
-export default ResMenuHeader;
-//shimmer ui
+export default ShimmerResMenuHeader;

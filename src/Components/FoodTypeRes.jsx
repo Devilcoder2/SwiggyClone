@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 import Card from "./Card";
+import ShimmerFoodTypeRes from "./Shimmer/ShimmerFoodTypeRes";
 
 const FoodTypeRes = () => {
   const [allRes, setAllRes] = useState([]);
@@ -25,42 +26,48 @@ const FoodTypeRes = () => {
   }, []);
 
   return (
-    <>
-      {heading !== null && (
-        <div className="mx-36 mt-12">
-          <h1 className="font-bold text-4xl text-gray-700">{heading}</h1>
-          <p className="mt-4 text-lg mb-2 text-gray-600">{description}</p>
-          <h1 className="text-xl mt-12 font-semibold">
-            Restaurants to explore
-          </h1>
-        </div>
-      )}
+    <div>
+      {allRes.length === 0 ? (
+        <ShimmerFoodTypeRes />
+      ) : (
+        <>
+          {heading !== null && (
+            <div className="mx-36 mt-12">
+              <h1 className="font-bold text-4xl text-gray-700">{heading}</h1>
+              <p className="mt-4 text-lg mb-2 text-gray-600">{description}</p>
+              <h1 className="text-xl mt-12 font-semibold">
+                Restaurants to explore
+              </h1>
+            </div>
+          )}
 
-      <div className="flex flex-wrap justify-center mx-8">
-        {allRes.map((t, i) => {
-          if (i >= 3 && i <= 10) {
-            return (
-              <Link key={i} to={"/resmenu/" + t.card.card.info.id}>
-                <Card
-                  image={t.card.card.info.cloudinaryImageId}
-                  title={t.card.card.info.name}
-                  rating={t.card.card.info.avgRating}
-                  deliverytime={t.card.card.info.sla.slaString}
-                  cusinis={t.card.card.info.cuisines}
-                  location={t.card.card.info.areaName}
-                  imageHeader={
-                    t.card.card.info.aggregatedDiscountInfoV3?.header
-                  }
-                  imageSubHeader={
-                    t.card.card.info.aggregatedDiscountInfoV3?.subHeader
-                  }
-                />
-              </Link>
-            );
-          }
-        })}
-      </div>
-    </>
+          <div className="flex flex-wrap justify-center mx-8">
+            {allRes.map((t, i) => {
+              if (i >= 3 && i <= 10) {
+                return (
+                  <Link key={i} to={"/resmenu/" + t.card.card.info.id}>
+                    <Card
+                      image={t.card.card.info.cloudinaryImageId}
+                      title={t.card.card.info.name}
+                      rating={t.card.card.info.avgRating}
+                      deliverytime={t.card.card.info.sla.slaString}
+                      cusinis={t.card.card.info.cuisines}
+                      location={t.card.card.info.areaName}
+                      imageHeader={
+                        t.card.card.info.aggregatedDiscountInfoV3?.header
+                      }
+                      imageSubHeader={
+                        t.card.card.info.aggregatedDiscountInfoV3?.subHeader
+                      }
+                    />
+                  </Link>
+                );
+              }
+            })}
+          </div>
+        </>
+      )}
+    </div>
   );
 };
 

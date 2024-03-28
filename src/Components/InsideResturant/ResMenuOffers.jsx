@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import OffersCard from "./OffersCard";
 
 const ResMenuOffers = ({ data }) => {
