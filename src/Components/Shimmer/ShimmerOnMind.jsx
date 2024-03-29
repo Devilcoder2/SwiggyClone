@@ -29,7 +29,7 @@ const ShimmerOnMind = () => {
               <div key={idx}>
                 <div className="inline-block px-3 ">
                   <div className="w-32 h-32 max-w-xs overflow-hidden rounded-lg bg-white ">
-                    <img className="w-full h-full object-cover hover:cursor-pointer bg-gray-300" />
+                    <img className="w-full h-full rounded-full object-cover hover:cursor-pointer bg-gray-300" />
                   </div>
                 </div>
               </div>

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const OnMind = ({ data }) => {
-  console.log(data);
   const newData =
     data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info;
   const imageLink = "https://media-assets.swiggy.com/swiggy/image/upload/";
