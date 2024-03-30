@@ -3,7 +3,7 @@ const Footer = () => {
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/";
 
   return (
-    <>
+    <div className="mt-12">
       <div className="w-full h-[130px] bg-gray-200">
         <div className="flex justify-between">
           <div className="mx-auto my-auto mt-6 text-gray-700 font-bold text-3xl ">
@@ -117,7 +117,7 @@ const Footer = () => {
           </h2>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

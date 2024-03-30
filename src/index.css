@@ -10,6 +10,20 @@
   color: rgb(22, 163, 74);
 }
 
+.header-orange:hover > div > svg,
+.header-orange:hover {
+  color: #fb923c;
+  fill: #fb923c;
+}
+
+.header-orange-gray:hover > span {
+  color: #fb923c;
+}
+
+.header-orange-gray:hover > div {
+  color: rgb(156, 163, 175);
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
