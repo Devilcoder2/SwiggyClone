@@ -1,20 +1,6 @@
-import { useEffect } from "react";
-
 const Footer = () => {
   const imageUrl =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/";
-
-  const fetchdata = async () => {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&is-seo-homepage-enabled=true"
-    );
-    const data = await response.json();
-    console.log(data);
-  };
-
-  useEffect(() => {
-    fetchdata();
-  }, []);
 
   return (
     <>

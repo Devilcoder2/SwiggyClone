@@ -8,6 +8,7 @@ import ResMenuHeader from "./InsideResturant/ResMenuHeader";
 import ResMenuOffers from "./InsideResturant/ResMenuOffers";
 import ShimmerResMenuHeader from "./Shimmer/ShimmerResMenuHeader";
 import ShimmerResMenuOffers from "./Shimmer/ShimmerResMenuOffers";
+import ResMenuFooter from "./ResMenuFooter";
 
 const ResturantMenu = () => {
   const { resid } = useParams();
@@ -31,6 +32,7 @@ const ResturantMenu = () => {
       {data !== null ? <ResMenuOffers data={data} /> : <ShimmerResMenuOffers />}
       {/* here veg only filter  */}
       <ResFullMenu />
+      <ResMenuFooter />
     </>
   );
 };

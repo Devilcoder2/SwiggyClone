@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 const OffersCard = ({ offerLogo, header, description, couponCode }) => {
-  console.log(offerLogo, header, description, couponCode);
   const imageLink = `https://media-assets.swiggy.com/swiggy/image/upload/${offerLogo}`;
   return (
     <>

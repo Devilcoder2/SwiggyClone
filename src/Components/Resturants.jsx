@@ -5,6 +5,7 @@ import Card from "./Card";
 import OnMind from "./OnMind";
 import ShimmerCard from "./Shimmer/ShimmerCard";
 import ShimmerOnMind from "./Shimmer/ShimmerOnMind";
+import Footer from "./Footer";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
@@ -68,6 +69,7 @@ const ResturantMenu = () => {
       <div>second: Top resturant chains</div>
       <div>third: resturants with online food delivery.... with filters</div> */}
       </div>
+      <Footer />
     </>
   );
 };

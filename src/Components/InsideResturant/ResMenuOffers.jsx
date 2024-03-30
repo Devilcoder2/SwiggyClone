@@ -5,7 +5,6 @@ const ResMenuOffers = ({ data }) => {
   const newdata =
     data.data.cards[3].card.card.gridElements.infoWithStyle.offers;
 
-  console.log(newdata);
   return (
     <>
       <div
