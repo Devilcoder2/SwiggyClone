@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -10,8 +12,11 @@ import Login from "./Components/Login.jsx";
 import Resturants from "./Components/Resturants.jsx";
 import ResturantMenu from "./Components/ResturantMenu.jsx";
 import Signup from "./Components/Signup.jsx";
+import SetLocation from "./Components/SetLocation.jsx";
+import Search from "./Components/Search.jsx";
 
 import "./index.css";
+import Offers from "./Components/Offers.jsx";
 
 const appRoutes = createBrowserRouter([
   {
@@ -49,6 +54,18 @@ const appRoutes = createBrowserRouter([
       {
         path: "/resmenu/:resid",
         element: <ResturantMenu />,
+      },
+      {
+        path: "/setLocation",
+        element: <SetLocation />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/offers",
+        element: <Offers />,
       },
     ],
   },
