@@ -6,6 +6,7 @@ import OnMind from "./OnMind";
 import ShimmerCard from "./Shimmer/ShimmerCard";
 import ShimmerOnMind from "./Shimmer/ShimmerOnMind";
 import Footer from "./Footer";
+import TopResturantChains from "./TopResturantChains";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
@@ -42,6 +43,8 @@ const ResturantMenu = () => {
         )}
       </div>
 
+      <div>{apidata !== null && <TopResturantChains data={apidata} />}</div>
+
       {resList.length === 0 && (
         <div className="flex flex-wrap justify-center mx-8">
           {cardArray.map((_, index) => (
@@ -65,13 +68,16 @@ const ResturantMenu = () => {
             />
           </Link>
         ))}
-        {/* <div>first : What is on your mind</div>
-      <div>second: Top resturant chains</div>
-      <div>third: resturants with online food delivery.... with filters</div> */}
       </div>
+
       <Footer />
     </>
   );
 };
 
 export default ResturantMenu;
+{
+  /* <div>first : What is on your mind</div>
+      <div>second: Top resturant chains</div>
+      <div>third: resturants with online food delivery.... with filters</div> */
+}

@@ -121,7 +121,7 @@ const OnMind = ({ data }) => {
       </div>
 
       <br />
-      <hr></hr>
+      <hr className="my-8"></hr>
       <br />
     </>
   );
