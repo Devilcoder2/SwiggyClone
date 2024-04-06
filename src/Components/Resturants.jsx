@@ -43,7 +43,49 @@ const ResturantMenu = () => {
         )}
       </div>
 
-      <div>{apidata !== null && <TopResturantChains data={apidata} />}</div>
+      <div className=" mb-16">
+        {apidata !== null && <TopResturantChains data={apidata} />}
+      </div>
+
+      <hr className="mx-28" />
+
+      <div className="ml-36 mt-12">
+        <h1 className="font-bold text-2xl mb-1 mt-2">
+          Restaurants with online food delivery in Kanpur
+        </h1>
+      </div>
+
+      <div className="my-4 ml-36">
+        <ul className="flex mt-3">
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Filter</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Sort By</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Fast Delivery</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>New on Swiggy</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Ratings 4.0+</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Pure Veg</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Offers</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Rs.300-Rs.600</button>
+          </li>
+          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
+            <button>Less than Rs.300</button>
+          </li>
+        </ul>
+      </div>
 
       {resList.length === 0 && (
         <div className="flex flex-wrap justify-center mx-8">
@@ -76,8 +118,3 @@ const ResturantMenu = () => {
 };
 
 export default ResturantMenu;
-{
-  /* <div>first : What is on your mind</div>
-      <div>second: Top resturant chains</div>
-      <div>third: resturants with online food delivery.... with filters</div> */
-}
