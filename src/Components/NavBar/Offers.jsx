@@ -1,6 +1,31 @@
 /* eslint-disable */
 
-const Offers = ({ data }) => {
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import Card from "../Card";
+import Footer from "../Footer";
+
+const Offers = () => {
+  const [offersResList, setOffersResList] = useState([]);
+
+  const fetchapi = async () => {
+    const res = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&is-seo-homepage-enabled=true"
+    );
+
+    const data = await res.json();
+
+    const restaurantData =
+      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+    setOffersResList(restaurantData);
+  };
+
+  useEffect(() => {
+    fetchapi();
+  }, []);
+
   return (
     <>
       <div className="ml-[200px] mt-16">
@@ -16,7 +41,7 @@ const Offers = ({ data }) => {
           </h1>
         </div>
 
-        <div>
+        <div className="mb-4">
           <ul className="flex mt-3">
             <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
               <button>Filter</button>
@@ -47,7 +72,32 @@ const Offers = ({ data }) => {
             </li>
           </ul>
         </div>
+
+        <div className="flex flex-wrap justify-center ml-[-90px]">
+          {offersResList.map((t) => {
+            const imageHeader = t.info.aggregatedDiscountInfoV3?.header;
+
+            if (imageHeader) {
+              return (
+                <Link key={t.info.id} to={"/resmenu/" + t.info.id}>
+                  <Card
+                    image={t.info.cloudinaryImageId}
+                    title={t.info.name}
+                    rating={t.info.avgRating}
+                    deliverytime={t.info.sla.slaString}
+                    cusinis={t.info.cuisines}
+                    location={t.info.areaName}
+                    imageHeader={imageHeader}
+                    imageSubHeader={t.info.aggregatedDiscountInfoV3?.subHeader}
+                  />
+                </Link>
+              );
+            }
+          })}
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 };
