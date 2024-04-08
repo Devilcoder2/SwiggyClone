@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 
 import Card from "../Card";
 import Footer from "../Footer";
+import ShimmerCard from "../Shimmer/ShimmerCard";
 
 const Offers = () => {
   const [offersResList, setOffersResList] = useState([]);
+
+  const cardArray = new Array(9).fill(null);
 
   const fetchapi = async () => {
     const res = await fetch(
@@ -72,6 +75,14 @@ const Offers = () => {
             </li>
           </ul>
         </div>
+
+        {offersResList.length === 0 && (
+          <div className="flex flex-wrap justify-center ml-[-90px]">
+            {cardArray.map((_, index) => (
+              <ShimmerCard key={index} />
+            ))}
+          </div>
+        )}
 
         <div className="flex flex-wrap justify-center ml-[-90px]">
           {offersResList.map((t) => {
