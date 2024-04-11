@@ -7,9 +7,11 @@ import ShimmerCard from "./Shimmer/ShimmerCard";
 import ShimmerOnMind from "./Shimmer/ShimmerOnMind";
 import Footer from "./Footer";
 import TopResturantChains from "./TopResturantChains";
+import Filters from "./NavBar/Filters";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
+  const [filteredOffersResList, setFilteredOffersResList] = useState([]);
   const [apidata, setapidata] = useState(null);
 
   const cardArray = new Array(9).fill(null);
@@ -29,6 +31,7 @@ const ResturantMenu = () => {
 
     setapidata(data);
     setResList(restaurantData);
+    setFilteredOffersResList(restaurantData);
   };
 
   return (
@@ -56,38 +59,13 @@ const ResturantMenu = () => {
       </div>
 
       <div className="my-4 ml-36">
-        <ul className="flex mt-3">
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Filter</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Sort By</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Fast Delivery</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>New on Swiggy</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Ratings 4.0+</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Pure Veg</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Offers</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Rs.300-Rs.600</button>
-          </li>
-          <li className="border border-gray-300 text-gray-800 text-sm rounded-full mr-4 px-2 pt-1 pb-2">
-            <button>Less than Rs.300</button>
-          </li>
-        </ul>
+        <Filters
+          offersResList={resList}
+          setFilteredOffersResList={setFilteredOffersResList}
+        />
       </div>
 
-      {resList.length === 0 && (
+      {filteredOffersResList.length === 0 && (
         <div className="flex flex-wrap justify-center mx-8">
           {cardArray.map((_, index) => (
             <ShimmerCard key={index} />
@@ -96,7 +74,7 @@ const ResturantMenu = () => {
       )}
 
       <div className="flex flex-wrap justify-center mx-8">
-        {resList.map((t) => (
+        {filteredOffersResList.map((t) => (
           <Link key={t.info.id} to={"/resmenu/" + t.info.id}>
             <Card
               image={t.info.cloudinaryImageId}
