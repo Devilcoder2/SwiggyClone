@@ -47,12 +47,14 @@ const Offers = () => {
           </h1>
         </div>
 
-        <div className="mb-4">
-          <Filters
-            offersResList={offersResList}
-            setFilteredOffersResList={setFilteredOffersResList}
-          />
-        </div>
+        {offersResList.length !== 0 && (
+          <div className="mb-4">
+            <Filters
+              offersResList={offersResList}
+              setFilteredOffersResList={setFilteredOffersResList}
+            />
+          </div>
+        )}
 
         {filteredOffersResList.length === 0 && (
           <div className="flex flex-wrap justify-center ml-[-90px]">

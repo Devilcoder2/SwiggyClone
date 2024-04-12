@@ -58,12 +58,14 @@ const ResturantMenu = () => {
         </h1>
       </div>
 
-      <div className="my-4 ml-36">
-        <Filters
-          offersResList={resList}
-          setFilteredOffersResList={setFilteredOffersResList}
-        />
-      </div>
+      {resList.length !== 0 && (
+        <div className="my-4 ml-36">
+          <Filters
+            offersResList={resList}
+            setFilteredOffersResList={setFilteredOffersResList}
+          />
+        </div>
+      )}
 
       {filteredOffersResList.length === 0 && (
         <div className="flex flex-wrap justify-center mx-8">

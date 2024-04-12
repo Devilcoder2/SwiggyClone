@@ -31,7 +31,7 @@ const ResturantMenu = () => {
       {data !== null ? <ResMenuHeader data={data} /> : <ShimmerResMenuHeader />}
       {data !== null ? <ResMenuOffers data={data} /> : <ShimmerResMenuOffers />}
       {/* here veg only filter  */}
-      <ResFullMenu />
+      {data !== null && <ResFullMenu data={data} />}
       <ResMenuFooter />
     </>
   );
