@@ -4,14 +4,12 @@ import nonveg from "./../../assets/nonVegIcon.png";
 import bestseller from "./../../assets/BestSellerImg.png";
 
 const AccordionCard = ({ cardItems }) => {
-  console.log(cardItems);
   const imgLink = `https://media-assets.swiggy.com/swiggy/image/upload/${cardItems.card.info.imageId}`;
   const rating = cardItems?.card?.info?.ratings?.aggregatedRating?.rating;
   const isVeg = cardItems?.card?.info?.isVeg;
   const isBestSeller = cardItems?.card?.info?.ribbon?.text;
   const color = rating > 3 ? "green" : "yellow";
-  // console.log(isVeg);
-
+  const price = cardItems?.card?.info?.price;
   return (
     <div className="bg-white pl-4 pt-8">
       <div className="flex justify-between">
@@ -31,9 +29,11 @@ const AccordionCard = ({ cardItems }) => {
           <h1 className="font-semibold text-xl text-gray-700">
             {cardItems?.card?.info?.name}
           </h1>
-          <h3 className="text-lg font-medium text-gray-80">
-            ₹{cardItems?.card?.info?.price / 100}
-          </h3>
+          {price !== undefined && (
+            <h3 className="text-lg font-medium text-gray-80">
+              ₹{cardItems?.card?.info?.price / 100}
+            </h3>
+          )}
 
           {rating !== undefined && (
             <h3 className="mt-4">

@@ -1,6 +1,8 @@
 /* eslint-disable */
 
+import MenuFilters from "./MenuFilters";
 import MyAccordion from "./MyAccordion";
+import SearchBar from "./SearchBar";
 
 const ResFullMenu = ({ data }) => {
   const menuDetailCards =
@@ -9,7 +11,13 @@ const ResFullMenu = ({ data }) => {
   console.log(length - 3);
   return (
     <div>
-      <div>This is the menu</div>
+      <div className="ml-[785px] mt-16 text-gray-600 font-medium tracking-[0.5em] ">
+        MENU
+      </div>
+
+      <SearchBar />
+
+      <MenuFilters />
 
       <div className="mt-16 mr-[380px] ml-[350px] bg-gray-100">
         <div className="">
