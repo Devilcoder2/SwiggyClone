@@ -75,7 +75,7 @@ const ResturantMenu = () => {
         </div>
       )}
 
-      <div className="flex flex-wrap justify-center mx-8">
+      <div className="flex flex-wrap justify-start ml-36 mr-8">
         {filteredOffersResList.map((t) => (
           <Link key={t.info.id} to={"/resmenu/" + t.info.id}>
             <Card

@@ -13,14 +13,7 @@ const Filters = ({ offersResList, setFilteredOffersResList }) => {
   const [pureVegClicked, setPureVegClicked] = useState(false);
   const [firstPrice, setFirstPrice] = useState(false);
   const [secondPrice, setSecondPrice] = useState(false);
-  const [offersClicked, setOffersClicked] = useState(true);
-
-  useEffect(() => {
-    const newList = offersResList.filter(
-      (t) => t.info.aggregatedDiscountInfoV3?.header !== undefined
-    );
-    setFilteredOffersResList(newList);
-  }, []);
+  const [offersClicked, setOffersClicked] = useState(false);
 
   const clickHandler = (i) => {
     if (i == 1) {
