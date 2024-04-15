@@ -10,6 +10,10 @@
   color: rgb(22, 163, 74);
 }
 
+.checked-yellow {
+  color: #fb923c;
+}
+
 .header-orange:hover > div > svg,
 .header-orange:hover {
   color: #fb923c;

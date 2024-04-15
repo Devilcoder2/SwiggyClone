@@ -6,7 +6,7 @@ import down from "./../../assets/down-arrow.png";
 import up from "./../../assets/up-arrow.png";
 
 const MyAccordion = ({ items }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const clickHandler = () => {
     setShow((prev) => !prev);
@@ -16,8 +16,11 @@ const MyAccordion = ({ items }) => {
   return (
     <>
       {items.itemCards !== undefined && (
-        <div className="my-5" onClick={clickHandler}>
-          <div className="bg-white flex justify-between pr-4">
+        <div className="my-5 cursor-pointer">
+          <div
+            className="bg-white flex justify-between pr-4 "
+            onClick={clickHandler}
+          >
             <h1 className="font-bold text-xl p-4 ">
               {`${items.title} (${items.itemCards?.length})`}
             </h1>
@@ -28,7 +31,7 @@ const MyAccordion = ({ items }) => {
             />
           </div>
 
-          <div>
+          <div className="bg-white">
             {show &&
               items.itemCards.map((t) => <AccordionCard cardItems={t} />)}
           </div>
