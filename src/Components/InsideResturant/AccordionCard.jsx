@@ -38,7 +38,11 @@ const AccordionCard = ({ cardItems }) => {
           {rating !== undefined && (
             <h3 className="mt-4">
               <h2
-                className={`font-extrabold text-[15px] ml-[6px] mb-1 text-${color}-500`}
+                className={
+                  rating > 3
+                    ? `font-bold text-[15px] ml-[6px] mb-1 text-green-500`
+                    : `font-bold text-[15px] ml-[6px] mb-1 text-yellow-500`
+                }
               >
                 <span className={`fa fa-star checked-${color} mr-1`}></span>
                 {`${rating}`}

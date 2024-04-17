@@ -5,7 +5,7 @@ import AccordionCard from "./AccordionCard";
 import down from "./../../assets/down-arrow.png";
 import up from "./../../assets/up-arrow.png";
 
-const MyAccordion = ({ items }) => {
+const MyAccordion = ({ items, isVegOn }) => {
   const [show, setShow] = useState(true);
 
   const clickHandler = () => {
@@ -33,7 +33,19 @@ const MyAccordion = ({ items }) => {
 
           <div className="bg-white">
             {show &&
-              items.itemCards.map((t) => <AccordionCard cardItems={t} />)}
+              items.itemCards.map((t) => {
+                if (isVegOn === null) {
+                  return <AccordionCard cardItems={t} />;
+                } else if (isVegOn === true) {
+                  if (t.card.info.itemAttribute.vegClassifier === "VEG") {
+                    return <AccordionCard cardItems={t} />;
+                  }
+                } else if (isVegOn === false) {
+                  if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
+                    return <AccordionCard cardItems={t} />;
+                  }
+                }
+              })}
           </div>
         </div>
       )}

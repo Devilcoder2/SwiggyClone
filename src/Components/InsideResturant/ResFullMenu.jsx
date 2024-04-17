@@ -1,10 +1,13 @@
 /* eslint-disable */
 
+import { useState } from "react";
 import MenuFilters from "./MenuFilters";
 import MyAccordion from "./MyAccordion";
 import SearchBar from "./SearchBar";
 
 const ResFullMenu = ({ data }) => {
+  const [isVegOn, setIsVegOn] = useState(null);
+
   const menuDetailCards =
     data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards;
   const length = menuDetailCards.length;
@@ -17,14 +20,16 @@ const ResFullMenu = ({ data }) => {
 
       <SearchBar />
 
-      <MenuFilters />
+      <div className="ml-[410px]">
+        <MenuFilters setIsVegOn={setIsVegOn} />
+      </div>
 
       <div className="mt-16 mr-[380px] ml-[350px] bg-gray-100">
         <div className="">
           {menuDetailCards.map((t, i) => {
             if (i !== 0 && i < length - 3) {
               const items = t.card.card;
-              return <MyAccordion items={items} />;
+              return <MyAccordion isVegOn={isVegOn} items={items} />;
             }
           })}
         </div>
