@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 
-function MenuFilters({ setIsVegOn }) {
+function MenuFilters({ setIsVegOn, setIsBestSellerOn }) {
   const [vegOn, setVegOn] = useState(false);
   const [nonVegOn, setNonVegOn] = useState(false);
+  const [bestSellerOn, setBestSellerOn] = useState(false);
 
   const toggleVeg = () => {
     if (vegOn) {
@@ -28,6 +29,11 @@ function MenuFilters({ setIsVegOn }) {
     }
   };
 
+  const bestSellerHandler = () => {
+    setBestSellerOn((prev) => !prev);
+    setIsBestSellerOn((prev) => !prev);
+  };
+
   return (
     <div className="flex justify-start mt-8">
       <div
@@ -45,6 +51,15 @@ function MenuFilters({ setIsVegOn }) {
         onClick={toggleNonVeg}
       >
         Non Veg
+      </div>
+
+      <div
+        className={`w-24 h-8 mr-4 py-4 rounded-lg  flex items-center justify-center cursor-pointer ${
+          bestSellerOn ? "bg-gray-400 text-white" : "bg-gray-200 text-gray-600"
+        }`}
+        onClick={bestSellerHandler}
+      >
+        Best Seller
       </div>
     </div>
   );

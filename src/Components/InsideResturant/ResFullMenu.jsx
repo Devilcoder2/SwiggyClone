@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 
 const ResFullMenu = ({ data }) => {
   const [isVegOn, setIsVegOn] = useState(null);
+  const [isBestSellerOn, setIsBestSellerOn] = useState(false);
 
   const menuDetailCards =
     data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards;
@@ -21,7 +22,10 @@ const ResFullMenu = ({ data }) => {
       <SearchBar />
 
       <div className="ml-[410px]">
-        <MenuFilters setIsVegOn={setIsVegOn} />
+        <MenuFilters
+          setIsVegOn={setIsVegOn}
+          setIsBestSellerOn={setIsBestSellerOn}
+        />
       </div>
 
       <div className="mt-16 mr-[380px] ml-[350px] bg-gray-100">
@@ -29,7 +33,14 @@ const ResFullMenu = ({ data }) => {
           {menuDetailCards.map((t, i) => {
             if (i !== 0 && i < length - 3) {
               const items = t.card.card;
-              return <MyAccordion isVegOn={isVegOn} items={items} />;
+              return (
+                <MyAccordion
+                  key={i}
+                  isVegOn={isVegOn}
+                  isBestSellerOn={isBestSellerOn}
+                  items={items}
+                />
+              );
             }
           })}
         </div>
