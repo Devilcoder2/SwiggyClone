@@ -1,4 +1,15 @@
-const SearchBar = () => {
+/* eslint-disable */
+
+import { useState } from "react";
+
+const SearchBar = ({ setSearchedValue }) => {
+  const [value, setValue] = useState("");
+
+  const onChangeHandler = (e) => {
+    setValue(e.target.value);
+    setSearchedValue(e.target.value);
+  };
+
   return (
     <>
       <form className="flex items-center max-w-sm ml-[410px] mt-8">
@@ -12,6 +23,8 @@ const SearchBar = () => {
             id="simple-search"
             className="bg-gray-100 border text-center border-white-300 text-gray-700  text-lg font-normal rounded-lg focus:ring-white-500 focus:border-white-500 block w-[800px] ps-10 p-2.5  dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-gray-600 outline-none dark:focus:ring-white-500 dark:focus:border-white-500"
             placeholder="Search for dishes"
+            value={value}
+            onChange={onChangeHandler}
             required
           />
         </div>

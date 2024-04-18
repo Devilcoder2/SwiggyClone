@@ -5,7 +5,7 @@ import AccordionCard from "./AccordionCard";
 import down from "./../../assets/down-arrow.png";
 import up from "./../../assets/up-arrow.png";
 
-const MyAccordion = ({ items, isVegOn, isBestSellerOn }) => {
+const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
   const [show, setShow] = useState(true);
 
   const clickHandler = () => {
@@ -34,20 +34,8 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn }) => {
           <div className="bg-white">
             {show &&
               items.itemCards.map((t) => {
-                if (isBestSellerOn === false) {
-                  if (isVegOn === null) {
-                    return <AccordionCard cardItems={t} />;
-                  } else if (isVegOn === true) {
-                    if (t.card.info.itemAttribute.vegClassifier === "VEG") {
-                      return <AccordionCard cardItems={t} />;
-                    }
-                  } else if (isVegOn === false) {
-                    if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
-                      return <AccordionCard cardItems={t} />;
-                    }
-                  }
-                } else {
-                  if (t.card.info.ribbon?.text === "Bestseller") {
+                if (t.card.info.name.toLowerCase().includes(searchedValue)) {
+                  if (isBestSellerOn === false) {
                     if (isVegOn === null) {
                       return <AccordionCard cardItems={t} />;
                     } else if (isVegOn === true) {
@@ -59,6 +47,22 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn }) => {
                         t.card.info.itemAttribute.vegClassifier === "NONVEG"
                       ) {
                         return <AccordionCard cardItems={t} />;
+                      }
+                    }
+                  } else {
+                    if (t.card.info.ribbon?.text === "Bestseller") {
+                      if (isVegOn === null) {
+                        return <AccordionCard cardItems={t} />;
+                      } else if (isVegOn === true) {
+                        if (t.card.info.itemAttribute.vegClassifier === "VEG") {
+                          return <AccordionCard cardItems={t} />;
+                        }
+                      } else if (isVegOn === false) {
+                        if (
+                          t.card.info.itemAttribute.vegClassifier === "NONVEG"
+                        ) {
+                          return <AccordionCard cardItems={t} />;
+                        }
                       }
                     }
                   }

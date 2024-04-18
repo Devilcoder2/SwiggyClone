@@ -8,18 +8,19 @@ import SearchBar from "./SearchBar";
 const ResFullMenu = ({ data }) => {
   const [isVegOn, setIsVegOn] = useState(null);
   const [isBestSellerOn, setIsBestSellerOn] = useState(false);
+  const [searchedValue, setSearchedValue] = useState("");
 
   const menuDetailCards =
     data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards;
   const length = menuDetailCards.length;
-  console.log(length - 3);
+
   return (
     <div>
       <div className="ml-[785px] mt-16 text-gray-600 font-medium tracking-[0.5em] ">
         MENU
       </div>
 
-      <SearchBar />
+      <SearchBar setSearchedValue={setSearchedValue} />
 
       <div className="ml-[410px]">
         <MenuFilters
@@ -39,6 +40,7 @@ const ResFullMenu = ({ data }) => {
                   isVegOn={isVegOn}
                   isBestSellerOn={isBestSellerOn}
                   items={items}
+                  searchedValue={searchedValue}
                 />
               );
             }
