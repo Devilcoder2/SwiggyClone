@@ -13,6 +13,42 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
   };
 
   if (items === undefined) return;
+  if (items.itemCards === undefined) return;
+
+  const newList = items.itemCards.filter((t) => {
+    if (t.card.info.name.toLowerCase().includes(searchedValue)) {
+      if (isBestSellerOn === false) {
+        if (isVegOn === null) {
+          return true;
+        } else if (isVegOn === true) {
+          if (t.card.info.itemAttribute.vegClassifier === "VEG") {
+            return true;
+          }
+        } else if (isVegOn === false) {
+          if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
+            return true;
+          }
+        }
+      } else {
+        if (t.card.info.ribbon?.text === "Bestseller") {
+          if (isVegOn === null) {
+            return true;
+          } else if (isVegOn === true) {
+            if (t.card.info.itemAttribute.vegClassifier === "VEG") {
+              return true;
+            }
+          } else if (isVegOn === false) {
+            if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
+              return true;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  console.log(newList);
+
   return (
     <>
       {items.itemCards !== undefined && (
@@ -22,7 +58,7 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
             onClick={clickHandler}
           >
             <h1 className="font-bold text-xl p-4 ">
-              {`${items.title} (${items.itemCards?.length})`}
+              {`${items.title} (${newList.length})`}
             </h1>
             <img
               src={show === false ? down : up}
@@ -31,7 +67,7 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
             />
           </div>
 
-          <div className="bg-white">
+          {/* <div className="bg-white">
             {show &&
               items.itemCards.map((t) => {
                 if (t.card.info.name.toLowerCase().includes(searchedValue)) {
@@ -68,7 +104,9 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
                   }
                 }
               })}
-          </div>
+          </div> */}
+
+          {show && newList.map((t) => <AccordionCard cardItems={t} />)}
         </div>
       )}
     </>
