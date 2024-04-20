@@ -47,11 +47,9 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
     }
   });
 
-  console.log(newList);
-
   return (
     <>
-      {items.itemCards !== undefined && (
+      {newList.length !== 0 && (
         <div className="my-5 cursor-pointer">
           <div
             className="bg-white flex justify-between pr-4 "
