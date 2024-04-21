@@ -5,7 +5,7 @@ import AccordionCard from "./AccordionCard";
 import down from "./../../assets/down-arrow.png";
 import up from "./../../assets/up-arrow.png";
 
-const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
+const MyAccordion = ({ items, name }) => {
   const [show, setShow] = useState(true);
 
   const clickHandler = () => {
@@ -13,50 +13,17 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
   };
 
   if (items === undefined) return;
-  if (items.itemCards === undefined) return;
-
-  const newList = items.itemCards.filter((t) => {
-    if (t.card.info.name.toLowerCase().includes(searchedValue)) {
-      if (isBestSellerOn === false) {
-        if (isVegOn === null) {
-          return true;
-        } else if (isVegOn === true) {
-          if (t.card.info.itemAttribute.vegClassifier === "VEG") {
-            return true;
-          }
-        } else if (isVegOn === false) {
-          if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
-            return true;
-          }
-        }
-      } else {
-        if (t.card.info.ribbon?.text === "Bestseller") {
-          if (isVegOn === null) {
-            return true;
-          } else if (isVegOn === true) {
-            if (t.card.info.itemAttribute.vegClassifier === "VEG") {
-              return true;
-            }
-          } else if (isVegOn === false) {
-            if (t.card.info.itemAttribute.vegClassifier === "NONVEG") {
-              return true;
-            }
-          }
-        }
-      }
-    }
-  });
 
   return (
     <>
-      {newList.length !== 0 && (
+      {items.length !== 0 && (
         <div className="my-5 cursor-pointer">
           <div
             className="bg-white flex justify-between pr-4 "
             onClick={clickHandler}
           >
             <h1 className="font-bold text-xl p-4 ">
-              {`${items.title} (${newList.length})`}
+              {`${name} (${items.length})`}
             </h1>
             <img
               src={show === false ? down : up}
@@ -65,7 +32,7 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
             />
           </div>
 
-          {show && newList.map((t) => <AccordionCard cardItems={t} />)}
+          {show && items.map((t) => <AccordionCard cardItems={t} />)}
         </div>
       )}
     </>
