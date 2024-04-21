@@ -65,45 +65,6 @@ const MyAccordion = ({ items, isVegOn, isBestSellerOn, searchedValue }) => {
             />
           </div>
 
-          {/* <div className="bg-white">
-            {show &&
-              items.itemCards.map((t) => {
-                if (t.card.info.name.toLowerCase().includes(searchedValue)) {
-                  if (isBestSellerOn === false) {
-                    if (isVegOn === null) {
-                      return <AccordionCard cardItems={t} />;
-                    } else if (isVegOn === true) {
-                      if (t.card.info.itemAttribute.vegClassifier === "VEG") {
-                        return <AccordionCard cardItems={t} />;
-                      }
-                    } else if (isVegOn === false) {
-                      if (
-                        t.card.info.itemAttribute.vegClassifier === "NONVEG"
-                      ) {
-                        return <AccordionCard cardItems={t} />;
-                      }
-                    }
-                  } else {
-                    if (t.card.info.ribbon?.text === "Bestseller") {
-                      if (isVegOn === null) {
-                        return <AccordionCard cardItems={t} />;
-                      } else if (isVegOn === true) {
-                        if (t.card.info.itemAttribute.vegClassifier === "VEG") {
-                          return <AccordionCard cardItems={t} />;
-                        }
-                      } else if (isVegOn === false) {
-                        if (
-                          t.card.info.itemAttribute.vegClassifier === "NONVEG"
-                        ) {
-                          return <AccordionCard cardItems={t} />;
-                        }
-                      }
-                    }
-                  }
-                }
-              })}
-          </div> */}
-
           {show && newList.map((t) => <AccordionCard cardItems={t} />)}
         </div>
       )}
