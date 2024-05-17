@@ -63,5 +63,5 @@ jobs:
           AWS_REGION: ap-south-1
           S3_BUCKET_NAME: react-assets-bucket
         run: |
-          aws s3 sync dist/ s3://$S3_BUCKET_NAME --delete
+          aws s3 sync dist/ s3://react-assets-bucket --delete
 
