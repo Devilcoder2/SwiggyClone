@@ -60,7 +60,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-south-1
-          S3_BUCKET_NAME: swiggy-clone-bucket
+          S3_BUCKET_NAME: reactdeployment-1
         run: |
           aws s3 sync dist/ s3://$S3_BUCKET_NAME --delete
 
