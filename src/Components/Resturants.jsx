@@ -29,6 +29,8 @@ const ResturantMenu = () => {
     const restaurantData =
       data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
+    console.log(restaurantData);
+
     setapidata(data);
     setResList(restaurantData);
     setFilteredOffersResList(restaurantData);
