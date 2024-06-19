@@ -39,7 +39,7 @@ To start the project locally, follow these steps:
 
 1. Clone the repository from GitHub:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Devilcoder2/SwiggyClone.git
    cd <repository-directory>
    ```
 
