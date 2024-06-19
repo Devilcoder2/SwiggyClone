@@ -16,7 +16,7 @@ const TopResturantChains = ({ data }) => {
   };
 
   const resList =
-    data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+    data.data.cards[3].card.card.gridElements.infoWithStyle.restaurants;
 
   return (
     <>

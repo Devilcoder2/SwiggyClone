@@ -26,8 +26,10 @@ const ResturantMenu = () => {
     );
     const data = await res.json();
 
+    // console.log(data.data);
+
     const restaurantData =
-      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+      data.data.cards[3].card.card.gridElements.infoWithStyle.restaurants;
 
     console.log(restaurantData);
 

@@ -71,14 +71,14 @@ const Header = () => {
         </div>
       </Link>
 
-      {/* <Link to="/setLocation">
+      <Link to="/setLocation">
         <div className="mt-3 mr-[430px] flex font-normal text-sm hover:cursor-pointer hover:text-gray-400 header-orange-gray">
           <span className="text-gray-700 underline-offset-4 decoration-2 underline font-bold mr-2 ">
             Other
           </span>
-          <div>{location}</div>
+          {/* <div>{location}</div> */}
         </div>
-      </Link> */}
+      </Link>
 
       <Link to="/search">
         <div className="flex mt-2 mr-12 hover:cursor-pointer header-orange  ">
