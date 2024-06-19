@@ -1,11 +1,6 @@
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/0845d775-6e0c-47ac-980a-8c235e97a7f2" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/4fcb21db-ac83-45b6-95ea-79ec873639a0" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/6ce94cd1-70ac-40dc-be03-fa97a1161a52" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/d014ab9a-0b28-4680-9f95-8ccf8a610f2d" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/dc2e233f-a8a6-4e15-a67f-9824374fa95d" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/077b97da-e247-4950-9887-123f03dd9a42" width="400" height="300" />
-<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/b46619e7-c69b-448c-8e7a-461316993fd5" width="400" height="300" />
 <img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/3aa9a2b9-fdd1-4af1-8cc5-2d4ba6aae251" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/b46619e7-c69b-448c-8e7a-461316993fd5" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/077b97da-e247-4950-9887-123f03dd9a42" width="400" height="300" />
 
 # Swiggy Clone
 
@@ -65,5 +60,11 @@ To start the project locally, follow these steps:
 
 ## Visit the Site
 Explore the live deployment of the Swiggy Clone app [here](http://react-assets-bucket.s3-website.ap-south-1.amazonaws.com/).
+
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/dc2e233f-a8a6-4e15-a67f-9824374fa95d" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/d014ab9a-0b28-4680-9f95-8ccf8a610f2d" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/6ce94cd1-70ac-40dc-be03-fa97a1161a52" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/4fcb21db-ac83-45b6-95ea-79ec873639a0" width="400" height="300" />
+<img src="https://github.com/Devilcoder2/SwiggyClone/assets/113927776/0845d775-6e0c-47ac-980a-8c235e97a7f2" width="400" height="300" />
 
 
