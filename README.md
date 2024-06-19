@@ -1,4 +1,4 @@
-![Screenshot (3244)](https://github.com/Devilcoder2/SwiggyClone/assets/113927776/0845d775-6e0c-47ac-980a-8c235e97a7f2)
+![Screenshot (3244)](https://github.com/Devilcoder2/SwiggyClone/assets/113927776/0845d775-6e0c-47ac-980a-8c235e97a7f2 = 250x)
 ![Screenshot (3243)](https://github.com/Devilcoder2/SwiggyClone/assets/113927776/4fcb21db-ac83-45b6-95ea-79ec873639a0)
 ![Screenshot (3242)](https://github.com/Devilcoder2/SwiggyClone/assets/113927776/6ce94cd1-70ac-40dc-be03-fa97a1161a52)
 ![Screenshot (3241)](https://github.com/Devilcoder2/SwiggyClone/assets/113927776/d014ab9a-0b28-4680-9f95-8ccf8a610f2d)
