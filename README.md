@@ -53,3 +53,6 @@ To start the project locally, follow these steps:
    npm run start
    ```
 
+## Visit the Site
+[Live Link](http://react-assets-bucket.s3-website.ap-south-1.amazonaws.com/)
+
