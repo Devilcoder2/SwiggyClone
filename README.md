@@ -23,16 +23,18 @@ This repository contains the frontend application for a Swiggy clone, featuring 
 3. **Online/Offline Status**: Indicates users' internet connectivity status, providing real-time feedback to enhance user experience.
    
 4. **CI/CD Pipeline**: Enables continuous integration and continuous deployment processes, facilitating efficient development and deployment of new features.
+
+5.  **Shimmer UI**: Enhances user experience by displaying temporary loading placeholders that mimic the appearance of actual content, reducing perceived load times and keeping users engaged.
    
-5. **Attractive and Interactive UI**: Engages users with visually appealing design and interactive elements.
+6. **Attractive and Interactive UI**: Engages users with visually appealing design and interactive elements.
    
-6. **Different Sections**: Includes sections like top-rated restaurants, categorized restaurants, currently active offers, etc.
+7. **Different Sections**: Includes sections like top-rated restaurants, categorized restaurants, currently active offers, etc.
    
-7. **Restaurant Menus**: Displays detailed restaurant menus including ratings, delivery time, offers, distance, location, and full menu items.
+8. **Restaurant Menus**: Displays detailed restaurant menus including ratings, delivery time, offers, distance, location, and full menu items.
    
-8. **Search and Filtering in Menus**: Users can search within specific restaurant menus and filter items by veg/non-veg and bestsellers.
+9. **Search and Filtering in Menus**: Users can search within specific restaurant menus and filter items by veg/non-veg and bestsellers.
    
-9. **Dish Ratings and Prices**: Provides information on ratings and prices for dishes within restaurant menus.
+10. **Dish Ratings and Prices**: Provides information on ratings and prices for dishes within restaurant menus.
 
 ## Starting the Project
 To start the project locally, follow these steps:
