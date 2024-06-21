@@ -8,11 +8,13 @@ import ShimmerOnMind from "./Shimmer/ShimmerOnMind";
 import Footer from "./Footer";
 import TopResturantChains from "./TopResturantChains";
 import Filters from "./NavBar/Filters";
+import Loader from "./Loader.jsx";
 
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
   const [filteredOffersResList, setFilteredOffersResList] = useState([]);
   const [apidata, setapidata] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const cardArray = new Array(9).fill(null);
 
@@ -20,18 +22,49 @@ const ResturantMenu = () => {
     fetchApi();
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleInfiniteScroll);
+  });
+
+  const handleInfiniteScroll = async () => {
+    try {
+      if (
+        document.documentElement.scrollHeight - 16 <
+        window.innerHeight + document.documentElement.scrollTop
+      ) {
+        setIsLoading(true);
+        const res = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&is-seo-homepage-enabled=true"
+        );
+        const data = await res.json();
+
+        const restaurantData =
+          data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+        setResList((prev) => {
+          const newList = [...prev, ...restaurantData];
+          return newList;
+        });
+
+        setFilteredOffersResList((prev) => {
+          return [...prev, ...restaurantData];
+        });
+
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const fetchApi = async () => {
     const res = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.490642&lng=80.3093933&is-seo-homepage-enabled=true"
     );
     const data = await res.json();
 
-    // console.log(data.data);
-
     const restaurantData =
-      data.data.cards[3].card.card.gridElements.infoWithStyle.restaurants;
-
-    console.log(restaurantData);
+      data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
     setapidata(data);
     setResList(restaurantData);
@@ -94,6 +127,8 @@ const ResturantMenu = () => {
             />
           </Link>
         ))}
+
+        {isLoading && <Loader />}
       </div>
 
       <Footer />
