@@ -76,7 +76,7 @@ const Header = () => {
           <span className="text-gray-700 underline-offset-4 decoration-2 underline font-bold mr-2 ">
             Other
           </span>
-          {/* <div>{location}</div> */}
+          <div>{location}</div>
         </div>
       </Link>
 

@@ -10,16 +10,21 @@ import TopResturantChains from "./TopResturantChains";
 import Filters from "./NavBar/Filters";
 import Loader from "./Loader.jsx";
 
+const apiEndPoint = "https://api.opencagedata.com/geocode/v1/json";
+const apiKey = "6cd08314eaa54132aed706e8f94fa052";
+
 const ResturantMenu = () => {
   const [resList, setResList] = useState([]);
   const [filteredOffersResList, setFilteredOffersResList] = useState([]);
   const [apidata, setapidata] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [city, setCity] = useState(null);
 
   const cardArray = new Array(9).fill(null);
 
   useEffect(() => {
     fetchApi();
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
   }, []);
 
   useEffect(() => {
@@ -71,6 +76,24 @@ const ResturantMenu = () => {
     setFilteredOffersResList(restaurantData);
   };
 
+  const onSuccess = (pos) => {
+    const { latitude, longitude } = pos.coords;
+    getUserCurrentLocation(latitude, longitude);
+  };
+
+  const onError = (e) => {
+    console.log(e.message);
+  };
+
+  const getUserCurrentLocation = async (lat, long) => {
+    const query = `${lat},${long}`;
+    const apiUrl = `${apiEndPoint}?key=${apiKey}&q=${query}&pretty=1`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    const city = data.results[0].components.city;
+    setCity(city);
+  };
+
   return (
     <>
       <div className="mx-24 px-8">
@@ -91,7 +114,7 @@ const ResturantMenu = () => {
 
       <div className="ml-36 mt-12">
         <h1 className="font-bold text-2xl mb-1 mt-2">
-          Restaurants with online food delivery in Kanpur
+          {`Restaurants with online food delivery ${city !== null && city}`}
         </h1>
       </div>
 
