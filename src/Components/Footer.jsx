@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="w-full h-[130px] bg-gray-200">
         <div className="flex justify-between">
           <div className="mx-auto my-auto mt-6 text-gray-700 font-bold text-3xl ">
-            <h1>
+            <h1 className="hover:cursor-pointer">
               For better experience,download <br></br> the Swiggy app now
             </h1>
           </div>
@@ -69,18 +69,20 @@ const Footer = () => {
               </filter>
             </defs>
           </svg>
-          <h1 className="text-2xl font-bold ml-[-14px] mt-1">Swiggy</h1>
+          <h1 className="text-2xl font-bold ml-[-14px] mt-1 hover:cursor-pointer">
+            Swiggy
+          </h1>
         </div>
 
         <div className="ml-24 mt-2 leading-loose">
           <h1 className="font-bold text-lg">Company</h1>
           <ul className="text-gray-400 text-md">
-            <li>About</li>
-            <li>Careers</li>
-            <li>Team</li>
-            <li>Swiggy One</li>
-            <li>Swiggy Instamart</li>
-            <li>Swiggy Genie</li>
+            <li className="hover:cursor-pointer">About</li>
+            <li className="hover:cursor-pointer">Careers</li>
+            <li className="hover:cursor-pointer">Team</li>
+            <li className="hover:cursor-pointer">Swiggy One</li>
+            <li className="hover:cursor-pointer">Swiggy Instamart</li>
+            <li className="hover:cursor-pointer">Swiggy Genie</li>
           </ul>
         </div>
 
@@ -88,17 +90,17 @@ const Footer = () => {
           <div>
             <h1 className="text-lg font-bold">Contact Us</h1>
             <ul className="text-gray-400 text-md">
-              <li>Help & Support</li>
-              <li>Patner with us</li>
-              <li>Ride with us</li>
+              <li className="hover:cursor-pointer">Help & Support</li>
+              <li className="hover:cursor-pointer">Patner with us</li>
+              <li className="hover:cursor-pointer">Ride with us</li>
             </ul>
           </div>
           <div className="mt-12">
             <h1 className="text-lg font-bold">Legal</h1>
             <ul className="text-gray-400 text-md">
-              <li>Terms & Conditions</li>
-              <li>Cookie Policy</li>
-              <li>Privacy Policy</li>
+              <li className="hover:cursor-pointer">Terms & Conditions</li>
+              <li className="hover:cursor-pointer">Cookie Policy</li>
+              <li className="hover:cursor-pointer">Privacy Policy</li>
             </ul>
           </div>
         </div>
@@ -106,11 +108,11 @@ const Footer = () => {
         <div className="ml-24 mt-2 leading-loose">
           <h1 className="font-bold text-lg">We deliver to:</h1>
           <ul className="text-gray-400 text-md">
-            <li>Banglore</li>
-            <li>Hyderabad</li>
-            <li>Delhi</li>
-            <li>Mumbai</li>
-            <li>Pune</li>
+            <li className="hover:cursor-pointer">Banglore</li>
+            <li className="hover:cursor-pointer">Hyderabad</li>
+            <li className="hover:cursor-pointer">Delhi</li>
+            <li className="hover:cursor-pointer">Mumbai</li>
+            <li className="hover:cursor-pointer">Pune</li>
           </ul>
           <h2 className="text-gray-400 border border-gray-400 rounded-md pl-4 mt-2">
             589 cities
