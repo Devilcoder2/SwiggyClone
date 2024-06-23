@@ -34,7 +34,7 @@ const ResturantMenu = () => {
   const handleInfiniteScroll = async () => {
     try {
       if (
-        document.documentElement.scrollHeight <
+        document.documentElement.scrollHeight - 15 <
         window.innerHeight + document.documentElement.scrollTop
       ) {
         setIsLoading(true);
