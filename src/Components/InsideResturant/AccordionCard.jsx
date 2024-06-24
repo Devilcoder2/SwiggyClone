@@ -10,6 +10,12 @@ const AccordionCard = ({ cardItems }) => {
   const isBestSeller = cardItems?.card?.info?.ribbon?.text;
   const color = rating > 3 ? "green" : "yellow";
   const price = cardItems?.card?.info?.price;
+
+  const handleAddCartButton = () => {
+    console.log(imgLink);
+    console.log(price);
+  };
+
   return (
     <div className="bg-white pl-4 pt-8">
       <div className="flex justify-between">
@@ -68,7 +74,10 @@ const AccordionCard = ({ cardItems }) => {
             alt=""
           />
 
-          <button className="text-green-700 font-bold text-xl  relative bottom-6 left-2 bg-white border border-gray-200 px-12 py-2 rounded-xl shadow-lg hover:bg-gray-300">
+          <button
+            onClick={handleAddCartButton}
+            className="text-green-700 font-bold text-xl  relative bottom-6 left-2 bg-white border border-gray-200 px-12 py-2 rounded-xl shadow-lg hover:bg-gray-300"
+          >
             ADD
           </button>
         </div>
