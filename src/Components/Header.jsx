@@ -80,7 +80,7 @@ const Header = () => {
         </div>
       </Link>
 
-      <Link to="/search">
+      {/* <Link to="/search">
         <div className="flex mt-2 mr-12 hover:cursor-pointer header-orange  ">
           <div className="mt-1 mr-2 ">
             <svg viewBox="5 -1 12 25" height="17" width="17" fill="#686b78">
@@ -89,7 +89,7 @@ const Header = () => {
           </div>
           <div>Search </div>
         </div>
-      </Link>
+      </Link> */}
 
       <Link to="/offers">
         <div className="flex mt-2 mr-12 hover:cursor-pointer header-orange ">

@@ -59,10 +59,10 @@ const appRoutes = createBrowserRouter([
         path: "/setLocation",
         element: <SetLocation />,
       },
-      {
-        path: "/search",
-        element: <Search />,
-      },
+      // {
+      //   path: "/search",
+      //   element: <Search />,
+      // },
       {
         path: "/offers",
         element: <Offers />,
