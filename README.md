@@ -15,6 +15,13 @@ This repository contains the frontend application for a Swiggy clone, featuring 
 - AWS S3
 - AWS EC2
 
+## Live Link 
+**NOTE** - You need to install a CORS extension and enable it to preview this website ( this is becuase, it uses swiggy live API which gives CORS errors) 
+
+Extension link - https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+
+**LIVE LINK** - https://swiggyclone40.netlify.app/
+
 ## Features
 1. **Advanced Filtering**: Allows users to perform advanced filtering such as veg/non-veg, best seller, offers, etc., enhancing user experience.
    
