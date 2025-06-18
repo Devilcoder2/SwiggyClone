@@ -15,10 +15,10 @@ const ResMenuHeader = ({ data }) => {
   } = realData;
 
   const cusinisString = cuisines.join(", ");
-
-  const parts = feeDetails.message.split(" | ");
-  const boldPart = parts[0].replace("<b>", "").replace("</b>", "");
-  const regularPart = parts.slice(1).join(" | ");
+  console.log("fee deatils------>", feeDetails);
+  // const parts = feeDetails.message.split(" | ");
+  // const boldPart = parts[0].replace("<b>", "").replace("</b>", "");
+  // const regularPart = parts.slice(1).join(" | ");
 
   return (
     <>

@@ -17,7 +17,7 @@ const ResFullMenu = ({ data }) => {
 
   return (
     <div>
-      <div className="ml-[785px] mt-16 text-gray-600 font-medium tracking-[0.5em] ">
+      <div className="ml-[700px] mt-16 text-gray-600 font-medium tracking-[0.5em] ">
         MENU
       </div>
 

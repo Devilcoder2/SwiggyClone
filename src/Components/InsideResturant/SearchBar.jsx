@@ -12,7 +12,7 @@ const SearchBar = ({ setSearchedValue }) => {
 
   return (
     <>
-      <form className="flex items-center max-w-sm ml-[410px] mt-8">
+      <form className="flex items-center max-w-sm ml-[325px] mt-8">
         <label htmlFor="simple-search" className="sr-only">
           Search
         </label>

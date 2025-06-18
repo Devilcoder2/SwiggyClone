@@ -35,7 +35,7 @@ function MenuFilters({ setIsVegOn, setIsBestSellerOn }) {
   };
 
   return (
-    <div className="flex justify-start mt-8">
+    <div className="flex justify-start mt-8 -ml-[85px]">
       <div
         className={`w-20 h-8 mr-4 px-6 py-4 rounded-lg flex items-center justify-center cursor-pointer ${
           vegOn ? "bg-green-500 text-white " : "bg-gray-200 text-gray-600"
